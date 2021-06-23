@@ -27,6 +27,9 @@ class TemplatePlugin(Plugin, metaclass=PluginMeta):
         """Process a VHD disk image"""
         try:
             # TODO: perform artifact processing here
+            # commit data added by plugin
+            self.session.commit()
+            # finally set overall processing status to SUCCESS
             status = Status.SUCCESS
         except:
             LOGGER.exception(
