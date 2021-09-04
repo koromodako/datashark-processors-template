@@ -1,1 +1,1 @@
-# datashark-plugin-template
+# datashark-processors-template
