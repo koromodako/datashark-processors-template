@@ -1,7 +1,6 @@
 """Datashark Template Plugin
 """
 from typing import Dict
-from pathlib import Path
 from datashark_core.meta import ProcessorMeta
 from datashark_core.logging import LOGGING_MANAGER
 from datashark_core.processor import ProcessorInterface, ProcessorError
@@ -37,10 +36,6 @@ class TemplateProcessor(ProcessorInterface, metaclass=ProcessorMeta):
 
     async def _run(self, arguments: Dict[str, ProcessorArgument]):
         """Process a file using tskape"""
-        # retrieve workdir and check access to it
-        workdir = self.config.get('datashark.agent.workdir', type=Path)
-        if not workdir.is_dir():
-            raise ProcessorError("agent-side workdir not found!")
         # TODO: perform processor work here
         raise ProcessorError("not implemented!")
         # commit data added by plugin (if needed)
